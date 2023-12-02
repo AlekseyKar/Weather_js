@@ -39,3 +39,31 @@ body {
 	padding-left: 20px;
 	padding-right: 10px;
 }
+
+.form__input::placeholder {
+	color: rgba(0, 0, 0, 0.5);
+}
+
+.form__btn {
+	padding: 0 10px;
+}
+
+.weather__details {
+	margin-top: 10px;
+	text-align: center;
+	padding-bottom: 60px;
+}
+
+.weather__img {
+	width: 120px;
+}
+
+.weather__temp {
+	color: #fff;
+	text-align: center;
+	font-family: Inter;
+
+	font-size: 60px;
+	font-weight: 700;
+	line-height: normal;
+}
