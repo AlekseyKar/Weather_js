@@ -54,14 +54,33 @@ async function getWeather(lat, lon) {
 		return data;
 }
 
-function renderWeatherData (data) {
+function renderWeatherData(data) {
+	// Отображаем блоки с ифнормацией
+	document.querySelector('.weather__info').classList.remove('none');
+	document.querySelector('.weather__details').classList.remove('none');
+
+	// Отображаем данные по погоде
 	const temp = document.querySelector('.weather__temp');
 	const city = document.querySelector('.weather__city');
 	const humidity = document.querySelector('#humidity');
 	const speed = document.querySelector('#speed');
+	const img = document.querySelector('.weather__img');
 
-	temp.innerText = Math.round(data.temp) + '°C';
+	temp.innerText = Math.round(data.temp) + '°c';
 	city.innerText = data.name;
 	humidity.innerText = data.humidity + '%';
-	speed.innerText = data.speed + 'km/h';
+	speed.innerText = data.speed + ' km/h';
+
+	const fileNames = {
+		Clouds: 'clouds',
+		Clear: 'clear',
+		Rain: 'rain',
+		Mist: 'mist',
+		Drizzle: 'drizzle',
+		Snow: 'snow',
+	};
+
+	if (fileNames[data.main]) {
+		img.src = `./img/weather/${fileNames[data.main]}.png`;
+	}
 }
