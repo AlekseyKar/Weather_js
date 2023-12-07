@@ -53,3 +53,15 @@ async function getWeather(lat, lon) {
 		const data = await response.json();
 		return data;
 }
+
+function renderWeatherData (data) {
+	const temp = document.querySelector('.weather__temp');
+	const city = document.querySelector('.weather__city');
+	const humidity = document.querySelector('#humidity');
+	const speed = document.querySelector('#speed');
+
+	temp.innerText = Math.round(data.temp) + '°C';
+	city.innerText = data.name;
+	humidity.innerText = data.humidity + '%';
+	speed.innerText = data.speed + 'km/h';
+}
