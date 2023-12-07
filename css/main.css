@@ -15,6 +15,10 @@ body {
   padding-bottom: 30vh;
 }
 
+.none {
+	display: none !important;
+}
+
 .weather {
 	width: 320px;
 	padding: 30px 20px;
@@ -30,7 +34,7 @@ body {
 	display: flex;
 	align-items: stretch;
 
-	border-color: #fff;
+	background-color: #fff;
 	border-radius: 60px;
 }
 
@@ -49,25 +53,29 @@ body {
 	padding: 0 10px;
 }
 
-.weather__details {
+.weather__info {
 	margin-top: 10px;
 	text-align: center;
 	padding-bottom: 60px;
 }
 
 .weather__img {
-	width: 120px;
+	width: 128px;
 }
 
 .weather__temp {
-	color: #fff;
 	text-align: center;
-	font-family: Inter;
-
-	font-size: 60px;
+	font-size: 56px;
 	font-weight: 700;
-	line-height: normal;
 }
+
+.weather__city {
+	text-align: center;
+	font-size: 38px;
+	font-weight: 500;
+}
+
+/* Weather Details */
 
 .weather__details {
 	display: flex;
@@ -85,11 +93,11 @@ body {
 .details__img {
 	width: 36px;
 	grid-row: 1/3;
-	align-items: center;
+	align-self: center;
 }
 
 .details__value {
-	font-size: 14px;
+	font-size: 20px;
 	font-weight: 300;
 }
 
